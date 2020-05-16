@@ -441,18 +441,6 @@
         "likes_count": 1,
         "answers": [
             {
-                "id": 17875803859629134,
-                "created_at": 1588865260,
-                "text": "It's supposed to be all Roman numerals right? \"IIII\" makes no sense",
-                "owner": {
-                    "id": "1087252709",
-                    "is_verified": false,
-                    "profile_pic_url": "https://scontent-zrh1-1.cdninstagram.com/v/t51.2885-19/s150x150/84358892_473966879948771_4470585867328552960_n.jpg?_nc_ht=scontent-zrh1-1.cdninstagram.com&_nc_ohc=Zzx5LWPAjoIAX_ZcJ7N&oh=511b8f8f1cf155839d3ccaf1c697d0c6&oe=5EEAF86D",
-                    "username": "rui.coelh0"
-                },
-                "likes_count": 0
-            },
-            {
                 "id": 17872132504709119,
                 "created_at": 1588925332,
                 "text": "@jimhaswatches thanks \ud83d\udcaa you learn something new everyday.",
@@ -475,6 +463,18 @@
                     "username": "jimhaswatches"
                 },
                 "likes_count": 1
+            },
+            {
+                "id": 17875803859629134,
+                "created_at": 1588865260,
+                "text": "It's supposed to be all Roman numerals right? \"IIII\" makes no sense",
+                "owner": {
+                    "id": "1087252709",
+                    "is_verified": false,
+                    "profile_pic_url": "https://scontent-zrh1-1.cdninstagram.com/v/t51.2885-19/s150x150/84358892_473966879948771_4470585867328552960_n.jpg?_nc_ht=scontent-zrh1-1.cdninstagram.com&_nc_ohc=Zzx5LWPAjoIAX_ZcJ7N&oh=511b8f8f1cf155839d3ccaf1c697d0c6&oe=5EEAF86D",
+                    "username": "rui.coelh0"
+                },
+                "likes_count": 0
             }
         ]
     },
