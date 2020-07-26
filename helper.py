@@ -65,8 +65,7 @@ f_handler = logging.FileHandler('file.log')
 c_format = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
 f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 c_handler.setFormatter(c_format)
-f_handler.setFormatter(f_format)
-
+ 
 # Add handlers to the logger
 logger.addHandler(c_handler)
 logger.addHandler(f_handler)
@@ -135,7 +134,8 @@ def generate_box_plot(comments_df, company):
                    'neu_sia_without_emoji':'neutral'}).\
                         iplot(kind='box', asFigure=True, theme='white',gridcolor='white',
                                        bargap=0.5, xTitle='box plot', 
-                                        title=company +' comments boxplot')
+                                        title=company +' comments boxplot', 
+                                        colors=['rgb(192,22,36)', 'rgb(249,202,206)', 'rgb(144,16,27)'], showlegend=True)
 
 
 def get_distributions(comment_df, company):
@@ -145,14 +145,16 @@ def get_distributions(comment_df, company):
                        'neu_sia_without_emoji':'neutral', 'agg_sia_without_emoji': 'aggregation'}).\
     iplot(asFigure=True, kind="histogram", theme='white',gridcolor='white',
                                 bargap=0.01, xTitle='distribution', yTitle='count', 
-                                title=company+' sentiment distribution', subplots=True, bins=10)
+                                title=company+' sentiment distribution', subplots=True, bins=10,
+                                colors=['rgb(192,22,36)'])
 
 def get_comment_length_distribution(comment_df, company):
     return comment_df[comment_df['Company name']==company].\
                     rename(columns={'comment_cleaned_length_without_emoji':'length'})[['length']].\
                         iplot(kind='hist', bins=100, asFigure=True, theme='white',gridcolor='white',
                                         bargap=0.01, xTitle='length', yTitle='count', 
-                                        title=company+' distribution of comments length')
+                                        title=company+' distribution of comments length',
+                                        colors=['rgb(192,22,36)'])
                                 
 def get_activity_per_day(comment_df, company):
     comment_df = comment_df[comment_df['Company name']==company]
@@ -160,7 +162,8 @@ def get_activity_per_day(comment_df, company):
     asFigure=True, theme='white',gridcolor='white',
                             bargap=0.01, xTitle='date', yTitle='count', 
                             title=company+' comments timeline', mode='lines',
-        text='reactions', bestfit=True, bestfit_colors=['blue'], world_readable=True, fill=True)
+        text='reactions', bestfit=True, bestfit_colors=['rgb(192,22,36)'], world_readable=True, fill=True,
+        colors=['rgb(192,22,36)'])
 
 
 def important_words_per_company(all_comments_df, company):
@@ -180,7 +183,7 @@ def important_words_per_company(all_comments_df, company):
     #fig = px.bar(word_count_df, x='word', y='count')
     return word_count_df[:10].iplot(kind='bar', asFigure=True, theme='white',gridcolor='white',
                                        bargap=0.5, yTitle='count', xTitle='words', 
-                                        title=company+' most common words', x='word')
+                                        title=company+' most common words', x='word',colors=['rgb(192,22,36)'])
 
 
 
@@ -267,7 +270,7 @@ def important_ngram_per_company(all_comments_df, company):
     #fig = px.bar(ngram_df[:10], x='ngram', y='frequency')
     return ngram_df[:10].iplot(kind='bar', asFigure=True, theme='white',gridcolor='white',
                                        bargap=0.5, yTitle='count', xTitle='words', 
-                                        title=company+' most common 2-grams', x='ngram')
+                                        title=company+' most common 2-grams', x='ngram', colors=['rgb(192,22,36)'])
 
 def get_word_dict(all_comments_df, company):
     all_comments_df = all_comments_df[all_comments_df['Company name']==company]
